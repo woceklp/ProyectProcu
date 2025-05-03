@@ -1,0 +1,416 @@
+/**
+ * styles.css - Estilos personalizados para el Sistema Gestor de Trámites Agrarios
+ */
+
+/* Estilos Generales */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Mejoras para las tarjetas */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: none;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0;
+    font-weight: 500;
+    padding: 1rem 1.25rem;
+}
+
+/* Colores principales */
+.bg-primary {
+    background-color: #336699 !important;
+}
+
+.btn-primary {
+    background-color: #336699;
+    border-color: #336699;
+}
+
+.btn-primary:hover {
+    background-color: #264d73;
+    border-color: #264d73;
+}
+
+.btn-outline-primary {
+    color: #336699;
+    border-color: #336699;
+}
+
+.btn-outline-primary:hover {
+    background-color: #336699;
+    border-color: #336699;
+}
+
+.text-primary {
+    color: #336699 !important;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.7rem 1rem;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+/* Tarjetas de resumen en el panel principal */
+.card .display-4 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #336699;
+}
+
+.card .display-5 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* Badges para los estados */
+.badge {
+    padding: 0.5em 0.7em;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+/* Tablas */
+.table {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(51, 102, 153, 0.05);
+}
+
+.table td .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+}
+
+/* Espaciado uniforme en las tablas */
+.table td, .table th {
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+/* Formularios */
+.form-control:focus, .form-select:focus {
+    border-color: #336699;
+    box-shadow: 0 0 0 0.2rem rgba(51, 102, 153, 0.25);
+}
+
+.input-group-text {
+    background-color: #336699;
+    color: white;
+    border-color: #336699;
+}
+
+/* Modales */
+.modal-header {
+    border-radius: 8px 8px 0 0;
+    padding: 1rem 1.5rem;
+}
+
+.modal-content {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+}
+
+/* Alertas */
+.alert {
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos específicos para estados de trámites */
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-item a {
+    color: #336699;
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    border-color: #ddd;
+}
+
+.btn-light:hover {
+    background-color: #e9ecef;
+}
+
+/* Sombras y efectos */
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+/* Hover en las filas de tabla */
+.table-hover tbody tr:hover {
+    background-color: rgba(51, 102, 153, 0.05);
+}
+
+/* Bordes redondeados en los componentes */
+.btn, .form-control, .input-group-text, .alert {
+    border-radius: 4px;
+}
+
+/* Colores de estado adicionales */
+.badge.bg-primary {
+    background-color: #336699 !important;
+}
+
+.badge.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.badge.bg-success {
+    background-color: #28a745 !important;
+}
+
+.badge.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529;
+}
+
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+/* Estilos adaptables para móviles */
+@media (max-width: 768px) {
+    .card .display-4 {
+        font-size: 2rem;
+    }
+    
+    .card .display-5 {
+        font-size: 1.5rem;
+    }
+    
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+}
+
+/* Estilos para impresión */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .card {
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .card-header {
+        background-color: #f8f9fa !important;
+        color: #000 !important;
+        border-bottom: 1px solid #dee2e6 !important;
+    }
+    
+    .badge {
+        border: 1px solid #000;
+        background-color: transparent !important;
+        color: #000 !important;
+    }
+
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}
+
+/* Estilos para el indicador de STATUS */
+.status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 8px;
+    min-width: 160px;
+}
+
+.status-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 4px;
+}
+
+.status-badge-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.status-badge-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-badge-warning {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.status-badge-primary {
+    background-color: #336699;
+    color: white;
+}
+
+.status-badge i {
+    font-size: 1.1rem;
+}
+
+.status-percentage {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 2px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .card-header .d-flex {
+        flex-direction: column;
+        align-items: start;
+    }
+    
+    .status-container {
+        margin-top: 10px;
+        align-self: flex-start;
+        width: 100%;
+    }
+    
+    .status-badge-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .status-badge {
+        margin-right: 10px;
+    }
+}
+
+/* Estilos para el título y el número de trámite */
+.header-title-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.header-id {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 5px;
+}
+
+.header-subtitle {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 3px;
+}
+
+/* Ajustes responsivos adicionales */
+@media (max-width: 768px) {
+    .card-header .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .header-title-container, .status-container {
+        width: 100%;
+    }
+}

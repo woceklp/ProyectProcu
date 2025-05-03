@@ -1,0 +1,100 @@
+2025-03-26 16:41:49 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => RAUL
+    [apellido_paterno] => PALMA
+    [apellido_materno] => MEDINA
+)
+
+Raw Input: nombre=RAUL&apellido_paterno=PALMA&apellido_materno=MEDINA
+2025-03-26 16:42:05 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => Miguel Alonso
+    [apellido_paterno] => Molina
+    [apellido_materno] => Flores
+)
+
+Raw Input: nombre=Miguel+Alonso&apellido_paterno=Molina&apellido_materno=Flores
+2025-03-26 16:52:37 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => Miguel Alonso
+    [apellido_paterno] => Molina
+    [apellido_materno] => Flores
+)
+
+Raw Input: nombre=Miguel+Alonso&apellido_paterno=Molina&apellido_materno=Flores
+2025-03-26 16:53:20 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => raul
+    [apellido_paterno] => palma
+    [apellido_materno] => medina
+)
+
+Raw Input: nombre=raul&apellido_paterno=palma&apellido_materno=medina
+2025-03-26 16:54:38 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => Miguel Alonso
+    [apellido_paterno] => Molina
+    [apellido_materno] => Flores
+)
+
+Raw Input: nombre=Miguel+Alonso&apellido_paterno=Molina&apellido_materno=Flores
+2025-03-26 16:55:45 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => RAUL
+    [apellido_paterno] => PALMA
+    [apellido_materno] => MEDINA
+)
+
+Raw Input: nombre=RAUL&apellido_paterno=PALMA&apellido_materno=MEDINA
+2025-03-26 16:55:50 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => RAUL
+    [apellido_paterno] => PALMA
+    [apellido_materno] => MEDINA
+)
+
+Raw Input: nombre=RAUL&apellido_paterno=PALMA&apellido_materno=MEDINA
+2025-03-26 16:56:55 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => raul
+    [apellido_paterno] => palma
+    [apellido_materno] => medina
+)
+
+Raw Input: nombre=raul&apellido_paterno=palma&apellido_materno=medina
+2025-03-26 16:56:56 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => raul
+    [apellido_paterno] => palma
+    [apellido_materno] => medina
+)
+
+Raw Input: nombre=raul&apellido_paterno=palma&apellido_materno=medina
+2025-03-26 16:56:57 - Nueva solicitud
+Método: POST
+POST Data: Array
+(
+    [nombre] => raul
+    [apellido_paterno] => palma
+    [apellido_materno] => medina
+)
+
+Raw Input: nombre=raul&apellido_paterno=palma&apellido_materno=medina
