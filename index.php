@@ -41,13 +41,12 @@
             <!-- Gestión de Trámites -->
             <div class="col">
                 <div class="card module-card">
-                    <div class="card-header py-3">
+                    <div class="card-header py-3 bg-primary text-white">
                         <h3 class="card-title mb-0">Gestión de Trámites</h3>
                     </div>
-                    <span class="status-badge status-active">Activo</span>
                     <div class="card-body d-flex flex-column">
                         <div class="text-center card-icon">
-                            <i class="fas fa-file-alt"></i>
+                            <i class="fas fa-file-alt fs-1 text-primary"></i>
                         </div>
                         <p class="card-text">Administre los trámites de la Procuraduría Agraria, seguimiento a CIIA, acuses y reiteraciones.</p>
                         <a href="tramites.php" class="btn btn-primary btn-access mt-auto">Acceder</a>
@@ -58,13 +57,12 @@
             <!-- Generación de Documentos -->
             <div class="col">
                 <div class="card module-card">
-                    <div class="card-header py-3">
+                    <div class="card-header py-3 bg-primary text-white">
                         <h3 class="card-title mb-0">Generación de Documentos</h3>
                     </div>
-                    <span class="status-badge status-active">Activo</span>
                     <div class="card-body d-flex flex-column">
                         <div class="text-center card-icon">
-                            <i class="fas fa-file-pdf"></i>
+                            <i class="fas fa-file-pdf fs-1 text-primary"></i>
                         </div>
                         <p class="card-text">Cree y gestione documentos relacionados con trámites y servicios agrarios.</p>
                         <a href="paginas/documentos.php" class="btn btn-primary btn-access mt-auto">Acceder</a>
@@ -75,15 +73,15 @@
             <!-- Agenda de Visitas -->
             <div class="col">
                 <div class="card module-card">
-                    <div class="card-header py-3">
+                    <div class="card-header py-3 bg-secondary text-white">
                         <h3 class="card-title mb-0">Agenda de Visitas</h3>
                     </div>
-                    <span class="status-badge status-pending">Próximamente</span>
                     <div class="card-body d-flex flex-column">
                         <div class="text-center card-icon">
-                            <i class="fas fa-calendar-alt"></i>
+                            <i class="fas fa-calendar-alt fs-1 text-secondary"></i>
                         </div>
                         <p class="card-text">Planifique y administre las visitas a ejidos y comunidades del área de atención.</p>
+                        <div class="text-center small fst-italic text-muted mb-2">Próximamente</div>
                         <button class="btn btn-secondary btn-access-disabled mt-auto" disabled>Acceder</button>
                     </div>
                 </div>
@@ -92,15 +90,15 @@
             <!-- Directorio -->
             <div class="col">
                 <div class="card module-card">
-                    <div class="card-header py-3">
+                    <div class="card-header py-3 bg-secondary text-white">
                         <h3 class="card-title mb-0">Directorio</h3>
                     </div>
-                    <span class="status-badge status-pending">Próximamente</span>
                     <div class="card-body d-flex flex-column">
                         <div class="text-center card-icon">
-                            <i class="fas fa-address-book"></i>
+                            <i class="fas fa-address-book fs-1 text-secondary"></i>
                         </div>
                         <p class="card-text">Acceda al directorio de contactos, comisariados ejidales y autoridades agrarias.</p>
+                        <div class="text-center small fst-italic text-muted mb-2">Próximamente</div>
                         <button class="btn btn-secondary btn-access-disabled mt-auto" disabled>Acceder</button>
                     </div>
                 </div>
