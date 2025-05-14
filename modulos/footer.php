@@ -23,7 +23,6 @@ if (!defined('BASE_URL')) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     
     <!-- Script personalizado - Incluir versión para forzar recarga (evitar caché) -->
-<!-- Script personalizado - Incluir versión para forzar recarga (evitar caché) -->
     <script src="<?php echo $rutaBase; ?>js/main.js?v=<?php echo time(); ?>"></script>    
     <script src="<?php echo $rutaBase; ?>js/alertas.js?v=<?php echo time(); ?>"></script>
     <script src="<?php echo $rutaBase; ?>js/validacion-promovente.js?v=<?php echo time(); ?>"></script>

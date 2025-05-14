@@ -1,25 +1,38 @@
 /**
  * styles.css - Estilos personalizados para el Sistema Gestor de Trámites Agrarios
+ * Versión actualizada con mejoras de espaciado y márgenes
  */
 
 /* Estilos Generales */
 body {
     background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 20px;
+}
+
+/* Contenedor principal más amplio */
+.container, .container-fluid {
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 98%;
 }
 
 /* Mejoras para las tarjetas */
 .card {
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+    margin-bottom: 25px;
     border: none;
 }
 
 .card-header {
     border-radius: 8px 8px 0 0;
     font-weight: 500;
-    padding: 1rem 1.25rem;
+    padding: 1.2rem 1.5rem;
+}
+
+.card-body {
+    padding: 1.5rem;
 }
 
 /* Colores principales */
@@ -51,15 +64,16 @@ body {
     color: #336699 !important;
 }
 
-/* Navbar */
+/* Navbar con más espacio */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 0.7rem 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 0.9rem 1.5rem;
 }
 
 .navbar-brand {
     font-weight: 600;
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    padding-left: 10px; /* Ajuste para alinear con "AGRARIA" */
 }
 
 /* Tarjetas de resumen en el panel principal */
@@ -77,12 +91,12 @@ body {
 
 /* Badges para los estados */
 .badge {
-    padding: 0.5em 0.7em;
+    padding: 0.6em 0.8em;
     font-size: 0.85em;
     font-weight: 500;
 }
 
-/* Tablas */
+/* Tablas con más espacio */
 .table {
     font-size: 0.95rem;
     margin-bottom: 0;
@@ -104,7 +118,7 @@ body {
 
 /* Espaciado uniforme en las tablas */
 .table td, .table th {
-    padding: 0.75rem;
+    padding: 0.9rem 1.2rem;
     vertical-align: middle;
 }
 
@@ -114,34 +128,43 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(51, 102, 153, 0.25);
 }
 
+.form-control, .form-select {
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
 .input-group-text {
     background-color: #336699;
     color: white;
     border-color: #336699;
 }
 
-/* Modales */
+/* Modales con más espacio */
 .modal-header {
     border-radius: 8px 8px 0 0;
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.5rem;
 }
 
 .modal-content {
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     border: none;
+}
+
+.modal-body {
+    padding: 1.5rem;
 }
 
 .modal-footer {
     border-top: 1px solid #e9ecef;
-    padding: 1rem 1.5rem;
+    padding: 1.2rem 1.5rem;
 }
 
 /* Alertas */
 .alert {
     border-radius: 8px;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Estilos específicos para estados de trámites */
@@ -161,11 +184,12 @@ body {
     background-color: #17a2b8 !important;
 }
 
-/* Breadcrumbs */
+/* Breadcrumbs con más espacio */
 .breadcrumb {
     background-color: transparent;
-    padding: 0.5rem 0;
-    margin-bottom: 1rem;
+    padding: 0.7rem 0;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
 .breadcrumb-item a {
@@ -179,12 +203,13 @@ body {
 
 /* Botones */
 .btn {
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: 500;
+    padding: 0.5rem 1rem;
 }
 
 .btn-sm {
-    padding: 0.25rem 0.5rem;
+    padding: 0.3rem 0.6rem;
     font-size: 0.875rem;
 }
 
@@ -208,8 +233,8 @@ body {
 }
 
 /* Bordes redondeados en los componentes */
-.btn, .form-control, .input-group-text, .alert {
-    border-radius: 4px;
+.btn, .form-control, .form-select, .input-group-text, .alert {
+    border-radius: 6px;
 }
 
 /* Colores de estado adicionales */
@@ -236,6 +261,11 @@ body {
 
 /* Estilos adaptables para móviles */
 @media (max-width: 768px) {
+    .container, .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
     .card .display-4 {
         font-size: 2rem;
     }
@@ -286,15 +316,16 @@ body {
     }
 }
 
-/* Estilos para el indicador de STATUS */
+/* Estilos para el indicador de STATUS con más espacio */
 .status-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 5px 15px;
-    border-radius: 8px;
-    min-width: 160px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    min-width: 175px;
+    margin-left: 15px;
 }
 
 .status-label {
@@ -302,7 +333,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .status-badge-container {
@@ -316,14 +347,14 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border-radius: 20px;
     font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
-    min-width: 120px;
+    min-width: 130px;
 }
 
 .status-badge-success {
@@ -343,12 +374,22 @@ body {
 
 .status-badge i {
     font-size: 1.1rem;
+    margin-left: 5px;
 }
 
 .status-percentage {
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.9);
-    margin-top: 2px;
+    margin-top: 4px;
+}
+
+/* Tabs con más espacio */
+.nav-tabs .nav-link {
+    padding: 0.8rem 1.2rem;
+}
+
+#detallesTabContent {
+    padding: 1.5rem !important; 
 }
 
 /* Estilos responsivos */
@@ -359,7 +400,7 @@ body {
     }
     
     .status-container {
-        margin-top: 10px;
+        margin-top: 15px;
         align-self: flex-start;
         width: 100%;
     }
@@ -375,10 +416,11 @@ body {
     }
 }
 
-/* Estilos para el título y el número de trámite */
+/* Estilos para el título y el número de trámite con más espacio */
 .header-title-container {
     display: flex;
     flex-direction: column;
+    padding: 5px 0;
 }
 
 .header-title {
@@ -391,26 +433,46 @@ body {
     font-size: 1.25rem;
     font-weight: 700;
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 6px;
-    margin-left: 5px;
+    margin-left: 7px;
 }
 
 .header-subtitle {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.85);
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
-/* Ajustes responsivos adicionales */
+/* Ajustes adicionales para mejor visualización en pantallas pequeñas */
 @media (max-width: 768px) {
     .card-header .d-flex {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
+        gap: 15px;
     }
     
     .header-title-container, .status-container {
         width: 100%;
     }
+}
+
+/* Espaciado adicional para la sección de detalles */
+.row {
+    margin-bottom: 20px;
+}
+
+/* Dar más espacio a los formularios en general */
+.mb-3 {
+    margin-bottom: 1.25rem !important;
+}
+
+/* Mejorar espaciado en la navegación por pestañas */
+.tab-content {
+    margin-top: 10px;
+}
+
+/* Espacio adicional para los alerts dentro de las cards */
+.card-body .alert {
+    margin-bottom: 20px;
 }

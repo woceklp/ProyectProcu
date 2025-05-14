@@ -22,6 +22,7 @@ $filtro = isset($_GET['filtro']) ? sanitizarEntrada($_GET['filtro']) : '';
 $promovente = isset($_GET['promovente']) ? sanitizarEntrada($_GET['promovente']) : '';
 $ciia = isset($_GET['ciia']) ? sanitizarEntrada($_GET['ciia']) : '';
 $numTramite = isset($_GET['num_tramite']) ? sanitizarEntrada($_GET['num_tramite']) : '';
+$descripcion = isset($_GET['descripcion']) ? sanitizarEntrada($_GET['descripcion']) : '';
 
 // Definir el título según los filtros
 $tituloListado = "Listado de Trámites";
@@ -190,7 +191,7 @@ elseif($filtro === 'reiteracion') {
     )";
 } else {
     // Consulta por defecto o para búsquedas
-    if(!empty($promovente) || !empty($ciia) || !empty($numTramite)) {
+    if(!empty($promovente) || !empty($ciia) || !empty($numTramite) || !empty($descripcion)) {
         $tituloListado = "Resultados de Búsqueda";
     }
     
@@ -215,6 +216,11 @@ elseif($filtro === 'reiteracion') {
     if(!empty($numTramite)) {
         $where[] = "EXISTS (SELECT 1 FROM Acuses a WHERE a.ID_Tramite = t.ID_Tramite AND a.NumeroAcuse LIKE ?)";
         $params[] = '%' . $numTramite . '%';
+    }
+
+    if(!empty($descripcion)) {
+        $where[] = "t.Descripcion LIKE ?";
+        $params[] = '%' . $descripcion . '%';
     }
 
     // Construir la cláusula WHERE completa
@@ -280,56 +286,60 @@ $resultado = ejecutarConsulta($sql, isset($params) ? $params : []);
             </div>
 
             <!-- Modal Filtros Avanzados -->
-            <div class="modal fade" id="filtrosAvanzados" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header bg-primary text-white">
-                            <h5 class="modal-title">
-                                <i class="fas fa-filter me-2"></i>FILTROS AVANZADOS
-                            </h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="formFiltrosAvanzados" action="listado-tramites.php" method="get">
-                                <div class="mb-3">
-                                    <label for="filtroPromovente" class="form-label">PROMOVENTE</label>
-                                    <input type="text" class="form-control" id="filtroPromovente" name="promovente" value="<?php echo $promovente; ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="filtroCIIA" class="form-label">CIIA</label>
-                                    <input type="text" class="form-control" id="filtroCIIA" name="ciia" value="<?php echo $ciia; ?>" maxlength="13">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="filtroNumTramite" class="form-label">Número de Trámite/Acuse</label>
-                                    <input type="text" class="form-control" id="filtroNumTramite" name="num_tramite" value="<?php echo $numTramite; ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="filtroEstado" class="form-label">STATUS DE TRAMITE</label>
-                                    <select class="form-select" id="filtroEstado" name="filtro">
-                                        <option value="">Todos</option>
-                                        <option value="activos" <?php echo ($filtro === 'activos') ? 'selected' : ''; ?>>ACTIVOS</option>
-                                        <option value="pendientes" <?php echo ($filtro === 'pendientes') ? 'selected' : ''; ?>>Pendientes de respuesta</option>
-                                        <option value="prevenidos" <?php echo ($filtro === 'prevenidos') ? 'selected' : ''; ?>>Con Status Prevenido</option>
-                                        <option value="reiteracion" <?php echo ($filtro === 'reiteracion') ? 'selected' : ''; ?>>POR REITERAR</option>
-                                        <option value="completados" <?php echo ($filtro === 'completados') ? 'selected' : ''; ?>>Con Status Completa</option>
-                                    </select>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                <i class="fas fa-times me-1"></i>CANCELAR
-                            </button>
-                            <button type="button" id="btnLimpiarFiltros" class="btn btn-warning">
-                                <i class="fas fa-eraser me-1"></i>Limpiar Filtros
-                            </button>
-                            <button type="submit" form="formFiltrosAvanzados" class="btn btn-primary">
-                                <i class="fas fa-search me-1"></i>Aplicar Filtros
-                            </button>
-                        </div>
-                    </div>
-                </div>
+<div class="modal fade" id="filtrosAvanzados" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-filter me-2"></i>FILTROS AVANZADOS
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+                <form id="formFiltrosAvanzados" action="listado-tramites.php" method="get">
+                    <div class="mb-3">
+                        <label for="filtroPromovente" class="form-label">PROMOVENTE</label>
+                        <input type="text" class="form-control" id="filtroPromovente" name="promovente" value="<?php echo $promovente; ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="filtroCIIA" class="form-label">CIIA</label>
+                        <input type="text" class="form-control" id="filtroCIIA" name="ciia" value="<?php echo $ciia; ?>" maxlength="13">
+                    </div>
+                    <div class="mb-3">
+                        <label for="filtroNumTramite" class="form-label">Número de Trámite/Acuse</label>
+                        <input type="text" class="form-control" id="filtroNumTramite" name="num_tramite" value="<?php echo $numTramite; ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="filtroDescripcion" class="form-label">Buscar en Descripción</label>
+                        <input type="text" class="form-control" id="filtroDescripcion" name="descripcion" value="<?php echo $descripcion; ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="filtroEstado" class="form-label">STATUS DE TRAMITE</label>
+                        <select class="form-select" id="filtroEstado" name="filtro">
+                            <option value="">Todos</option>
+                            <option value="activos" <?php echo ($filtro === 'activos') ? 'selected' : ''; ?>>ACTIVOS</option>
+                            <option value="pendientes" <?php echo ($filtro === 'pendientes') ? 'selected' : ''; ?>>Pendientes de respuesta</option>
+                            <option value="prevenidos" <?php echo ($filtro === 'prevenidos') ? 'selected' : ''; ?>>Con Status Prevenido</option>
+                            <option value="reiteracion" <?php echo ($filtro === 'reiteracion') ? 'selected' : ''; ?>>POR REITERAR</option>
+                            <option value="completados" <?php echo ($filtro === 'completados') ? 'selected' : ''; ?>>Con Status Completa</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-1"></i>CANCELAR
+                </button>
+                <button type="button" id="btnLimpiarFiltros" class="btn btn-warning">
+                    <i class="fas fa-eraser me-1"></i>Limpiar Filtros
+                </button>
+                <button type="submit" form="formFiltrosAvanzados" class="btn btn-primary">
+                    <i class="fas fa-search me-1"></i>Aplicar Filtros
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
             <!-- SECCIÓN 5: RESULTADOS DE LA CONSULTA -->
             <!-- ------------------------------------ -->
@@ -444,6 +454,7 @@ $(document).ready(function() {
         $('#filtroPromovente').val('');
         $('#filtroCIIA').val('');
         $('#filtroNumTramite').val('');
+        $('#filtroDescripcion').val('');
         $('#filtroEstado').val('');
     });
 });

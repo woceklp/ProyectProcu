@@ -357,11 +357,9 @@ function actualizarStatusTramiteSegunAcuses($idTramite) {
 
 //----------------------------------------------------------
 
-// Esta función debe agregarse al archivo config.php, cerca de las otras funciones utilitarias
-
 /**
  * Calcula los días transcurridos para la reiteración, considerando el estado COMPLETA
- * Si el trámite está COMPLETO, devuelve 0 días (no necesita reiteración)
+ * Si el trámite está COMPLETO, usa la fecha de completado para calcular hasta ese momento
  */
 function calcularDiasReiteracion($idTramite) {
     // Consultar el estado y fechas relevantes
@@ -389,7 +387,12 @@ function calcularDiasReiteracion($idTramite) {
                 WHERE r.ID_Tramite = t.ID_Tramite 
                 ORDER BY r.NumeroReiteracion DESC), 
                 t.FechaRCHRP
-            ) AS FechaInicio
+            ) AS FechaInicio,
+            (SELECT TOP 1 a.FechaRecepcionRAN
+             FROM Acuses a
+             WHERE a.ID_Tramite = t.ID_Tramite
+             AND a.ID_EstadoBasico = 1  -- Estado COMPLETA
+             ORDER BY a.FechaRegistro DESC) AS FechaAcuseCompletado
         FROM Tramites t
         WHERE t.ID_Tramite = ?";
     
@@ -406,17 +409,25 @@ function calcularDiasReiteracion($idTramite) {
         return 0;
     }
     
-    // Si está COMPLETA y tiene fecha de completado, calcular días hasta esa fecha
-    if ($datosEstado['StatusReal'] === 'COMPLETA' && isset($datosEstado['FechaCompletado']) && $datosEstado['FechaCompletado']) {
+    // Si está COMPLETA, calcular los días hasta la fecha de completado
+    if ($datosEstado['StatusReal'] === 'COMPLETA') {
         $fechaInicio = $datosEstado['FechaInicio'];
-        $fechaFin = $datosEstado['FechaCompletado'];
+        
+        // Primero buscar la fecha del acuse marcado como COMPLETA
+        if (isset($datosEstado['FechaAcuseCompletado']) && $datosEstado['FechaAcuseCompletado']) {
+            $fechaFin = $datosEstado['FechaAcuseCompletado'];
+        }
+        // Si no hay acuse COMPLETA, usar la fecha de completado del trámite
+        else if (isset($datosEstado['FechaCompletado']) && $datosEstado['FechaCompletado']) {
+            $fechaFin = $datosEstado['FechaCompletado'];
+        }
+        // Si no hay ninguna fecha específica, usar 0 días
+        else {
+            return 0;
+        }
+        
         $diasTranscurridos = $fechaFin->diff($fechaInicio)->days;
         return $diasTranscurridos;
-    }
-    
-    // Si está COMPLETA pero no tiene fecha de completado (casos antiguos), usar 0
-    if ($datosEstado['StatusReal'] === 'COMPLETA') {
-        return 0;
     }
     
     // Para trámites en proceso, calcular días hasta hoy

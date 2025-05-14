@@ -1,0 +1,179 @@
+/**
+ * dashboard.css - Estilos específicos para el panel de control (index)
+ * Sistema Gestor de Trámites Agrarios - PROCURADURIA AGRARIA
+ */
+
+/* Estilos para destacar el logo en la barra de navegación */
+.navbar-brand {
+    padding: 0;
+    margin-right: 2rem;
+}
+
+.navbar-brand img {
+    height: 50px;
+    margin-right: 0.5rem;
+}
+
+/* Estilos mejorados para las cards del dashboard */
+.card-dashboard {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+}
+
+.card-dashboard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de íconos con animación */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.display-icon {
+    font-size: 3.5rem;
+    color: #336699;
+    transition: transform 0.3s ease;
+}
+
+.card-dashboard:hover .display-icon {
+    transform: scale(1.1);
+}
+
+/* Títulos de las cards */
+.card-dashboard .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Contador grande */
+.counter-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #336699;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Botón de ver detalles */
+.btn-card-action {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* Indicador de estado como cinta en la esquina */
+.status-ribbon {
+    position: absolute;
+    top: 10px;
+    right: -35px;
+    width: 130px;
+    padding: 4px 0;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    transform: rotate(45deg);
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-active {
+    background-color: #28a745;
+}
+
+.ribbon-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.ribbon-danger {
+    background-color: #dc3545;
+}
+
+.ribbon-info {
+    background-color: #17a2b8;
+}
+
+/* Contador de estado para las cards */
+.status-counter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+}
+
+.counter-danger {
+    background-color: #dc3545;
+}
+
+.counter-warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.counter-success {
+    background-color: #28a745;
+}
+
+.counter-info {
+    background-color: #17a2b8;
+}
+
+/* Fila de tarjetas de resumen */
+.dashboard-cards-row {
+    margin-bottom: 2rem;
+}
+
+/* Buscador Rápido */
+.search-card {
+    background-color: #f8f9fa;
+    border-left: 4px solid #336699;
+}
+
+.search-card .card-header {
+    background-color: #336699;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .display-icon {
+        font-size: 2.5rem;
+    }
+    
+    .counter-display {
+        font-size: 2rem;
+    }
+    
+    .card-dashboard .card-title {
+        font-size: 1rem;
+    }
+    
+    .status-ribbon {
+        width: 120px;
+        font-size: 0.6rem;
+        right: -30px;
+        top: 8px;
+    }
+    
+    .status-counter {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+}

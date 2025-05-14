@@ -1,7 +1,7 @@
 <?php
 /**
  * modulos/header.php - Encabezado común para todas las páginas
- * Versión corregida con rutas relativas apropiadas
+ * Versión corregida con rutas relativas apropiadas y estructura de contenedor consistente
  */
 
 // Determinar si estamos en una página del directorio "paginas"
@@ -67,3 +67,4 @@ $isListaPromoventes = ($currentPage === 'lista-promoventes.php');
     </nav>
     
     <!-- Contenedor principal para el contenido -->
+    <div class="container mt-4">
